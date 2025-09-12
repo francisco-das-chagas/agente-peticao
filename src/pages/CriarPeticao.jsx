@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Peticao } from "@/api/entities";
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -7,6 +6,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { AlertTriangle, CheckCircle2, ArrowLeft, Clock, FileText, Scale } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { createPageUrl } from "@/utils";
+import { uploadAndProcessFiles } from '../api/apiClient'
 
 import TipoPeticaoSelector from "../components/peticao/TipoPeticaoSelector";
 import RequiredDocuments from "../components/peticao/RequiredDocuments";
@@ -75,38 +75,34 @@ export default function CriarPeticao() {
     }));
   };
 
-  const handleGeneratePetition = async () => {
-    if (!canGenerate()) return;
+ const handleGeneratePetition = async () => {
+   if (!canGenerate()) return
+   setIsProcessing(true)
 
-    setIsProcessing(true);
-    
-    try {
-      const peticaoData = {
-        tipo_categoria: selectedCategoria,
-        tipo_peticao: selectedTipo,
-        relatorio_processo: documents.relatorio_processo,
-        documentos_essenciais: documents.documentos_essenciais,
-        copia_processo: documents.copia_processo,
-        status_geral: "processando",
-        data_processamento: new Date().toISOString()
-      };
+   try {
+     const allFiles = Object.values(documents).flatMap(doc => doc.files || [])
+     if (allFiles.length === 0) {
+       alert(
+         'Nenhum arquivo foi enviado. Por favor, adicione os documentos necessários.'
+       )
+       setIsProcessing(false)
+       return
+     }
 
-      const novaPeticao = await Peticao.create(peticaoData);
-      
-      // Simulação do processamento (substitua pela integração real com n8n)
-      setTimeout(() => {
-        setProcessedResult({
-          id: novaPeticao.id,
-          resumo: "Petição processada com sucesso pela IA. Documentação analisada e resumo jurídico gerado."
-        });
-        setIsProcessing(false);
-      }, 3000);
+     // AGORA CHAMAMOS A FUNÇÃO IMPORTADA
+     const response = await uploadAndProcessFiles(allFiles, selectedTipo)
 
-    } catch (error) {
-      console.error("Erro ao processar petição:", error);
-      setIsProcessing(false);
-    }
-  };
+     setProcessedResult({
+       id: new Date().getTime(),
+       resumo: response.report
+     })
+   } catch (error) {
+     console.error('Erro ao processar petição:', error)
+     alert(`Erro ao gerar petição: ${error.message}`)
+   } finally {
+     setIsProcessing(false)
+   }
+ }
 
   if (processedResult) {
     return (

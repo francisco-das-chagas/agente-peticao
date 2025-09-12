@@ -13,7 +13,6 @@ import {
   Paperclip,
   Trash2
 } from 'lucide-react'
-import { uploadToN8N } from '@/api/n8n'
 
 /** Nome amigável */
 const toDisplayName = f =>
