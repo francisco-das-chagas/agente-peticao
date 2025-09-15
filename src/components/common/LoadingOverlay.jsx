@@ -4,7 +4,7 @@ export default function LoadingOverlay() {
       <div className="text-center p-8 rounded-lg">
         {/* Garanta que o caminho para a sua logo está correto */}
         <img
-          src="src/logo.png"
+          src="/logo.png"
           alt="Logo do Escritório"
           className="h-[400px] w-[400px] mx-auto mb-6 animate-pulse" // A animação 'pulse' dá uma sensação de carregamento
         />
