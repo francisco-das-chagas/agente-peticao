@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: agente-peticao
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+    rootDir: agente-relatorio-backend
+    build:
+      # Adiciona o Tesseract OCR ao ambiente
+      aptPackages:
+        - tesseract-ocr
