@@ -82,8 +82,7 @@ export default function Layout({ children, currentPageName }) {
           <SidebarHeader className="bg-[#6E0000] p-6 flex flex-col items-center gap-2 border-b border-white/10">
             <div className="w-full h-32 rounded-lg flex items-center justify-center overflow-hidden p-2">
               <img
-                // src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_68b03fb3ce559daab8005704/1f16d1bb9_Logo-RFeitosapng.png"
-                src="src/Logo-Original.png"
+                src="/logo-original.png"
                 alt="R Feitosa Group"
                 className="bg-[#6E0000] w-[400px] h-full object-contain"
               />
