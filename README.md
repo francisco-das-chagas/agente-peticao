@@ -1,20 +1,24 @@
-# Base44 App
-
-
-This app was created automatically by Base44.
-It's a Vite+React app that communicates with the Base44 API.
-
-## Running the app
-
-```bash
-npm install
-npm run dev
+```yaml
+---
+title: Agente de Petição
+emoji: ⚖️
+colorFrom: indigo
+colorTo: gray
+sdk: docker
+pinned: false
+---
 ```
 
-## Building the app
+```markdown
+---
+title: Agente de Petição
+emoji: ⚖️
+colorFrom: indigo
+colorTo: gray
+sdk: docker
+pinned: false
+---
 
-```bash
-npm run build
+# Agente de Petição
+Backend da aplicação de geração de petições com IA, desenvolvido em Python/Flask.
 ```
-
-For more information and support, please contact Base44 support at app@base44.com.
