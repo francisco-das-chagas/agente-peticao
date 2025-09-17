@@ -62,6 +62,10 @@ const TIPOS_PETICAO = {
     { value: 'acao_cobranca', label: 'Ação de Cobrança - Créditos e débitos' }
   ],
   pecas_defensivas: [
+    {
+      value: 'contestacao_trabalhista',
+      label: 'Contestação - Defesa trabalhista'
+    },
     { value: 'contestacao', label: 'Contestação - Defesa em ações cíveis' },
     {
       value: 'replica_contestacao',
@@ -104,12 +108,93 @@ const TIPOS_PETICAO = {
   ],
   pecas_executivas: [
     {
-      value: 'cumprimento_sentenca',
-      label: 'Cumprimento de Sentença - Execução de título judicial'
+      value: 'cumprimento_sentenca_particular',
+      label: 'Cível - Cumprimento de Sentença Particular'
+    },
+    {
+      value: 'cumprimento_sentenca_honorarios_sucumbenciais',
+      label: 'Cível - Cumprimento de Sentença honorários Sucumbenciais'
+    },
+    {
+      value: 'cumprimento_sentenca_honorarios_sucumbenciais_fazenda_publica',
+      label:
+        'Cível - Cumprimento de Sentença honorários Sucumbenciais Fazenda Pública'
+    },
+    {
+      value: 'implantacao_adicional_noturno',
+      label: 'Cível - Implantação Adicional Noturno'
+    },
+    {
+      value: 'obrigacao_pagar',
+      label: 'Cível - Obrigação de Pagar'
+    },
+    {
+      value: 'quinquenio_implantacao',
+      label: 'Cível - Quinquênio Implantação'
+    },
+    {
+      value: 'ciencia_rpv',
+      label: 'Previdenciário - Ciência RPV'
+    },
+    {
+      value: 'concordancia_calculos_destacamento_honorarios',
+      label:
+        'Previdenciário - Concordância Cálculos, Destacamento dos Honorários Contratuais'
+    },
+    {
+      value: 'cumprimento_sentenca_previdenciario',
+      label: 'Previdenciário - Cumprimento de Sentença'
+    },
+    {
+      value: 'destacamento_honorarios_contratual',
+      label: 'Previdenciário - Destacamento dos Honorários Contratuais'
+    },
+    {
+      value: 'execucao_multa',
+      label: 'Previdenciário - Execução de Multa'
+    },
+    {
+      value: 'expedicao_alvara',
+      label: 'Previdenciário - Exçedição de Alvará'
+    },
+    {
+      value: 'impugnacao_calculos_contadoria_judicial',
+      label:
+        'Previdenciário - Impugnação dos Cálculos Contadoria Judicial - Não consta o 13º'
+    },
+    {
+      value: 'impugnacao_a_obrigacao_fazer_pagar',
+      label: 'Previdenciário - Impugnação à obrigação de fazer e pagar'
+    },
+    {
+      value: 'majoracao_multa_oficiar_cgu',
+      label: 'Previdenciário - Majoração da Multa Aplicada e Oficiar a CGU'
+    },
+    {
+      value: 'manifestacao_renuncia_rpv',
+      label:
+        'Previdenciário - Manifestação - Não Houve Renúncia Para Fins de Recebimento por RPV'
+    },
+    {
+      value: 'manifestacao_aplicacao_multa',
+      label: 'Previdenciário - Manifestação Aplicação de Multa'
+    },
+    {
+      value: 'renuncia_excedente_rpv',
+      label: 'Previdenciário - Renúncia Excedente ao Teto da RPV'
+    },
+    {
+      value: 'resposta_impugnacao_astreintes',
+      label:
+        'Previdenciário - Resposta a Impugnação ao Cumprimento da Astreintes/Multa'
+    },
+    {
+      value: 'resposta_impugnacao_inss',
+      label: 'Previdenciário - Resposta à Impugnação INSS'
     },
     {
       value: 'liquidacao_artigos',
-      label: 'Liquidação por Artigos - Apuração de valores'
+      label: 'Liquidação por Artigos -  EXPEDIÇÃO DE ALVARÁ'
     }
   ]
 }

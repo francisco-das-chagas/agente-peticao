@@ -8,7 +8,7 @@ import fitz
 import docx
 from openai import OpenAI
 from dotenv import load_dotenv
-from docx import Document
+from docx import Document 
 from docx.shared import Pt, Cm
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from PIL import Image
