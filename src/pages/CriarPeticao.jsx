@@ -193,6 +193,22 @@ const TIPOS_PETICAO = {
       label: 'Previdenciário - Resposta à Impugnação INSS'
     },
     {
+      value: 'cumprimento_sentenca_trabalhista',
+      label: 'Trabalhista - Cumprimento de Sentença'
+    },
+    {
+      value: 'meios_executivos_trabalhista',
+      label: 'Trabalhista - Meios executivos'
+    },
+    {
+      value: 'peticoes_intermediarias_trabalhista',
+      label: 'Trabalhista - Petições Intermediárias'
+    },
+    {
+      value: 'recurso_trabalhista',
+      label: 'Trabalhista - Recurso'
+    },
+    {
       value: 'liquidacao_artigos',
       label: 'Liquidação por Artigos -  EXPEDIÇÃO DE ALVARÁ'
     }
