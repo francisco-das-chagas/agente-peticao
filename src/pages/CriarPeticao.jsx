@@ -82,6 +82,10 @@ const TIPOS_PETICAO = {
     {
       value: 'excecao_pre_executividade',
       label: 'Exceção de Pré-Executividade - Defesa sem garantia'
+    },
+    {
+      value: 'manifestacao_de_laudo',
+      label: 'Manifestação de Laudo'
     }
   ],
   recursos: [
